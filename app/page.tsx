@@ -1,7 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CycleSummary } from "@/components/content/cycle-summary";
-import { cases } from "@/lib/site-content";
+import { featuredStartups } from "@/lib/site-content";
+import { BenefitsSection } from "@/components/content/benefits-section";
+import { SocialLinks } from "@/components/content/social-links";
+import { NewsCard } from "@/components/content/news-card";
+import { getPublishedNews } from "@/lib/cms";
+import { newsPreviews } from "@/lib/news";
 
 export const dynamic = "force-dynamic";
 import { ArrowRight, Boxes, BriefcaseBusiness, Building2, Check, ChevronDown, CircuitBoard, ExternalLink, Handshake, MapPin, Network, Rocket, Sparkles, Sprout, Sun, Target, UsersRound } from "lucide-react";
@@ -32,7 +37,8 @@ const faqs = [
   ["Como faço para participar?", "Confira requisitos, prazo atualizado e formulário oficial na página de oportunidades. Se o prazo de uma edição já tiver terminado, acompanhe os resultados e fale com a incubadora sobre os próximos ciclos."],
 ];
 
-export default function Home() {
+export default async function Home() {
+  const posts = newsPreviews(await getPublishedNews()).slice(0, 3);
   return <main>
     <section className="hero" aria-labelledby="hero-title">
       <Image src="/hero-faixa-ubo4.png" alt="Paisagem do Sertão ao pôr do sol com uma pessoa observando o horizonte" fill preload sizes="100vw" className="hero__background" />
@@ -62,13 +68,17 @@ export default function Home() {
 
     <section className="section services" id="servicos" aria-labelledby="services-title"><div className="container"><div className="section-heading section-heading--split"><div><p className="eyebrow">Apoio ao desenvolvimento</p><h2 id="services-title">Recursos para transformar projetos em negócios.</h2></div><p>Conheça o apoio dos programas e as possibilidades no CIM. Uso de espaços, equipamentos e apoios externos depende de avaliação, agenda e condições específicas.</p></div><div className="services-grid">{servicos.map(({ Icone, titulo, itens }) => <article className="service-card" key={titulo}><Icone aria-hidden="true" /><h3>{titulo}</h3><ul>{itens.map(item => <li key={item}><Check aria-hidden="true" />{item}</li>)}</ul></article>)}</div><p className="content-actions"><Link className="text-link" href="/servicos">Ver apoios, condições e como solicitar <ArrowRight aria-hidden="true" /></Link></p></div></section>
 
+    <BenefitsSection />
+
     <section className="section ecosystem" id="cim" aria-labelledby="ecosystem-title"><div className="container ecosystem-grid"><div><p className="eyebrow eyebrow--light">Integração institucional</p><h2 id="ecosystem-title">A Sertão Maker faz parte do CIM.</h2><p>A incubadora atua conectada ao ambiente de inovação do IFSertãoPE Campus Salgueiro.</p><a className="button button--light" href="https://cimhub.com.br/" target="_blank" rel="noopener noreferrer">Conheça o CIM <ExternalLink aria-hidden="true" /></a></div><div className="ecosystem-card"><Boxes aria-hidden="true" /><h3>Conexão com laboratórios.</h3><p>Quando o projeto exige desenvolvimento técnico, a incubadora orienta o acesso às estruturas adequadas do ecossistema.</p><p className="ecosystem-card__note">Uso sujeito ao perfil do projeto, à agenda e às normas de cada espaço.</p></div></div></section>
 
     <section className="section content" id="conteudos" aria-labelledby="content-title"><div className="container"><div className="section-heading section-heading--split"><div><p className="eyebrow">Ecossistema em movimento</p><h2 id="content-title">Projetos reais e guias para começar.</h2></div><p>Conheça experiências documentadas e encontre orientações para desenvolver sua iniciativa.</p></div><div className="content-grid content-grid--two"><article><span>PORTFÓLIO</span><Rocket aria-hidden="true" /><h3>Startups e projetos</h3><p>Conheça projetos, conquistas e registros históricos, com período e fonte institucional.</p><Link className="text-link" href="/startups">Ver projetos <ArrowRight aria-hidden="true" /></Link></article><article><span>CONTEÚDOS E AGENDA</span><Sparkles aria-hidden="true" /><h3>Guias e novidades</h3><p>Primeiros passos, validação de soluções, preparação de propostas e agenda do programa.</p><Link className="text-link" href="/conteudos">Ver conteúdos <ArrowRight aria-hidden="true" /></Link></article></div></div></section>
 
     <section className="section partners" id="parceiros" aria-labelledby="partners-title"><div className="container partners__inner"><Handshake aria-hidden="true" /><div><p className="eyebrow">Parcerias</p><h2 id="partners-title">Inovação se constrói em rede.</h2><p>A Sertão Maker conecta ensino, empresas, governo, especialistas e organizações comprometidas com o desenvolvimento regional.</p></div><Link className="text-link" href="/parcerias">Conheça a rede e proponha uma parceria <ArrowRight aria-hidden="true" /></Link></div></section>
 
-    <section className="section" aria-labelledby="home-results-title"><div className="container"><div className="section-heading"><p className="eyebrow">Experiências documentadas</p><h2 id="home-results-title">O território também produz resultados.</h2><p>Registros históricos com fontes institucionais. Conheça o contexto de cada conquista.</p></div><div className="editorial-grid">{cases.map(item => <article className="editorial-card" key={item.slug}><p className="eyebrow">{item.period}</p><h3>{item.name}</h3><p>{item.summary}</p><p>{item.result}</p><Link className="text-link" href={"/startups/" + item.slug}>Conhecer o registro <ArrowRight aria-hidden="true" /></Link></article>)}</div></div></section>
+    <section className="section" aria-labelledby="home-results-title"><div className="container"><div className="section-heading section-heading--split"><div><p className="eyebrow">Aprovadas para incubação · 2026.1</p><h2 id="home-results-title">Novos negócios, novos caminhos.</h2></div><p>A seleção mais recente do SerTão Inovador reúne 28 startups aprovadas no resultado final. Conheça alguns nomes desse ciclo.</p></div><div className="startup-grid">{featuredStartups.slice(0, 3).map(name => <article key={name}><p className="eyebrow">Ciclo 2026.1</p><h3>{name}</h3><p>Aprovada no resultado final de incubação.</p><Link className="text-link" href="/startups#ciclo-2026-1">Conhecer a seleção →</Link></article>)}</div><p className="source-note">Seleção conjunta das incubadoras ISA e Sertão Maker. Consulte o resultado e o contexto na página de projetos.</p><Link className="text-link" href="/startups#ciclo-2026-1">Ver as 28 startups e o resultado oficial →</Link></div></section>
+
+    <section className="section home-news" aria-labelledby="home-news-title"><div className="container"><div className="section-heading section-heading--split"><div><p className="eyebrow">Oportunidades que circulam</p><h2 id="home-news-title">Novidades para dar o próximo passo.</h2></div><Link className="text-link" href="/noticias">Ver todas as publicações →</Link></div><div className="news-grid">{posts.map(post => <NewsCard post={post} key={post.slug} />)}</div><div className="community-band"><div><h3>A inovação também acontece na conversa.</h3><p>Siga o Instagram e participe da comunidade Sertão Maker.</p></div><SocialLinks /></div></div></section>
 
     <section className="section faq" id="faq" aria-labelledby="faq-title"><div className="container faq-grid"><div><p className="eyebrow">Perguntas frequentes</p><h2 id="faq-title">O que você precisa saber.</h2></div><div>{faqs.map(([pergunta, resposta]) => <details key={pergunta}><summary>{pergunta}<ChevronDown aria-hidden="true" /></summary><p>{resposta}</p></details>)}</div></div></section>
 

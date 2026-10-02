@@ -1,0 +1,67 @@
+[
+  {
+    "slug": "pre-incubacao-2026-2-prazo-prorrogado",
+    "title": "Pré-incubação 2026.2: confira o prazo prorrogado e como participar",
+    "category": "Editais",
+    "publishedAt": "2026-10-02",
+    "excerpt": "A retificação do edital 122/2026 informa inscrições até 5 de outubro. Confira os requisitos, o cronograma e o formulário oficial.",
+    "closesAt": "2026-10-06T00:00:00-03:00",
+    "source": "https://ifsertaope.edu.br/editais/edital-n-o-122-2026/",
+    "sourceLabel": "Portal oficial do edital 122/2026",
+    "actionHref": "/oportunidades",
+    "actionLabel": "Ver requisitos e cronograma",
+    "sections": [
+      { "title": "Prazo indicado na retificação", "text": "A retificação nº 01 informa inscrições até 05/10/2026. O resumo do portal mantém 30/09 e o cabeçalho do PDF apresenta uma data divergente; leia os documentos e consulte a execução do programa em caso de dúvida." },
+      { "title": "Quem pode participar", "text": "A seleção contempla projetos inovadores em ideação ou validação, representados por pessoas maiores de idade residentes em Pernambuco. São até 40 vagas, com reserva de 50% para iniciativas vinculadas ao Sertão Pernambucano, conforme o edital." },
+      { "title": "Como acompanhar", "text": "Consulte a página de oportunidades para os documentos e o formulário oficial. Depois do prazo publicado, acompanhe seleção, resultados e novos comunicados pelo portal do IFSertãoPE." }
+    ]
+  },
+  {
+    "slug": "beneficios-aws-formacao-e-mentorias",
+    "title": "Nuvem, formação e mentorias: conheça as possibilidades de apoio",
+    "category": "Benefícios",
+    "publishedAt": "2026-10-02",
+    "excerpt": "Créditos AWS de até US$ 5 mil, formação técnica, mentoria, infraestrutura e conexões podem apoiar o desenvolvimento de startups elegíveis.",
+    "source": "https://aws.amazon.com/pt/startups/credits/",
+    "sourceLabel": "AWS Activate: créditos e elegibilidade",
+    "actionHref": "/servicos#beneficios",
+    "actionLabel": "Conhecer benefícios e condições",
+    "sections": [
+      { "title": "Possibilidade de até US$ 5 mil em créditos AWS", "text": "Os créditos são destinados ao uso de serviços elegíveis de nuvem. A concessão depende da elegibilidade da startup, da oferta disponível e da aprovação da AWS. A incubadora orienta a consulta e a solicitação; valor e validade são definidos na aprovação." },
+      { "title": "Apoios para cada necessidade", "text": "A rede reúne possibilidades de formação técnica Cisco e Huawei, mentorias, diagnóstico e planejamento do negócio, apoio à captação, networking e conexão com a infraestrutura do CIM. As condições são combinadas conforme o projeto e a disponibilidade." },
+      { "title": "Comece pelo estágio do seu projeto", "text": "Informe o que você está desenvolvendo, o estágio atual e a necessidade de apoio. Isso permite que a equipe indique o programa e as oportunidades adequadas." }
+    ]
+  },
+  {
+    "slug": "demoday-pre-incubacao-2026-2",
+    "title": "Demoday 2026.2: apresentação dos projetos está prevista para dezembro",
+    "category": "Eventos",
+    "publishedAt": "2026-10-02",
+    "excerpt": "O cronograma prevê o Demoday em 16 de dezembro de 2026. A programação e as condições de participação serão comunicadas pela execução.",
+    "eventDate": "2026-12-16",
+    "source": "https://ifsertaope.edu.br/wp-content/uploads/2026/09/retificacao_01_edital_122_2026_.pdf",
+    "sourceLabel": "Retificação nº 01 do edital 122/2026 (PDF)",
+    "actionHref": "/oportunidades",
+    "actionLabel": "Acompanhar o calendário do programa",
+    "sections": [
+      { "title": "Uma etapa para apresentar aprendizados", "text": "O Demoday integra o ciclo de pré-incubação e reúne a apresentação dos projetos a uma banca e a atores do ecossistema. É uma oportunidade para comunicar a solução e os aprendizados da jornada." },
+      { "title": "Data prevista no calendário", "text": "A retificação informa 16/12/2026 como data prevista. A execução do programa comunicará a programação e as condições de acesso. Acompanhe os avisos oficiais antes de organizar sua participação." }
+    ]
+  },
+  {
+    "slug": "resultado-final-incubacao-2026-1",
+    "title": "Incubação 2026.1: resultado final reúne 28 startups aprovadas",
+    "category": "Resultados",
+    "publishedAt": "2026-01-27",
+    "excerpt": "O resultado final do edital 191/2025 identifica os empreendimentos aprovados no ciclo 2026.1 do SerTão Inovador.",
+    "source": "https://ifsertaope.edu.br/wp-content/uploads/2026/01/Resultado_final_2026.1.pdf",
+    "sourceLabel": "Resultado final da incubação 2026.1 (PDF)",
+    "actionHref": "/startups#ciclo-2026-1",
+    "actionLabel": "Ver startups desta seleção",
+    "sections": [
+      { "title": "A seleção mais recente de incubação", "text": "O resultado final, datado de 26 de janeiro e publicado no portal em 27 de janeiro de 2026, registra 28 empreendimentos aprovados. A página de projetos destaca nomes dessa seleção e oferece a relação completa." },
+      { "title": "O que o documento informa", "text": "A lista confirma a aprovação para o Programa de Incubação SerTão Inovador, executado pelas incubadoras ISA e Sertão Maker. Ela não detalha a situação contratual atual, a incubadora responsável por cada empreendimento ou resultados comerciais individuais." },
+      { "title": "Conheça os nomes e a fonte", "text": "AquEdu, Conecta Agro Inova Simples, Detekt AI, Lawify, Reclick e Syncfive - ReUse.app estão entre os nomes relacionados. Consulte o resultado oficial para conferir todos os aprovados." }
+    ]
+  }
+]

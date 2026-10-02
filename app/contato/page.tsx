@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ContentPage } from "@/components/content/content-page";
+import { SocialLinks } from "@/components/content/social-links";
 import { contact, emailLink, sources } from "@/lib/site-content";
 
 export const metadata: Metadata = { title: "Contato | Incubadora Sertão Maker", description: "Fale com a Sertão Maker sobre programas, parcerias e visitas ao CIM no IFSertãoPE Campus Salgueiro." };
@@ -12,5 +13,5 @@ export default function Page() {
       { title: "Proponha uma parceria", text: "Empresas, instituições e especialistas podem conversar sobre mentorias, desafios, ações conjuntas e apoio à infraestrutura.", items: ["Nome da organização e responsável", "Objetivo da colaboração", "Recursos ou competências que deseja compartilhar"], link: { label: "Enviar proposta de parceria", href: emailLink("Proposta de parceria — Sertão Maker") } },
       { title: "Visitas e localização", text: "Centro de Inovação Maker — CIM, IFSertãoPE Campus Salgueiro. " + contact.address + ".", items: ["Solicite a visita por e-mail antes de se deslocar", "Informe número de visitantes, objetivo e datas desejadas", "Informe necessidades de acessibilidade para orientar o atendimento"], link: { label: "Solicitar uma visita", href: emailLink("Solicitação de visita ao CIM — Sertão Maker") }, content: <p className="source-note"><a href={contact.campusContact}>Endereço e contatos institucionais do campus</a> · Horário de visita e disponibilidade devem ser combinados com a equipe.</p> },
     ]}
-    cta={{ title: "Conte o que você quer desenvolver.", label: "Escrever para a Sertão Maker", href: emailLink("Contato — Sertão Maker") }} />;
+    cta={{ title: "Conte o que você quer desenvolver.", label: "Escrever para a Sertão Maker", href: emailLink("Contato — Sertão Maker") }}><section className="container content-section"><h2>Faça parte da rede.</h2><p>Acompanhe o Instagram e conecte-se à comunidade Sertão Maker.</p><SocialLinks /></section></ContentPage>;
 }

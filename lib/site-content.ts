@@ -1,3 +1,10 @@
+export const siteUrl = "https://www.sertaomaker.com.br";
+
+export const social = {
+  instagram: "https://www.instagram.com/incubadora_sertaomaker/",
+  community: "",
+};
+
 export const contact = {
   email: "contato@sertaomaker.com",
   programEmail: "isa@ifsertao-pe.edu.br",
@@ -13,7 +20,9 @@ export const sources = {
   preIncubation: "https://ifsertaope.edu.br/editais/edital-n-o-122-2026/",
   preRegulation: "https://ifsertaope.edu.br/wp-content/uploads/2026/09/Edital.pdf",
   amendment: "https://ifsertaope.edu.br/wp-content/uploads/2026/09/retificacao_01_edital_122_2026_.pdf",
-  incubation: "https://ifsertaope.edu.br/editais/edital-n-191-2025-programa-de-incubacao-sertao-inovador/",
+  incubation: "https://ifsertaope.edu.br/editais/edital-n-o-191-2025/",
+  incubationResult: "https://ifsertaope.edu.br/wp-content/uploads/2026/01/Resultado_final_2026.1.pdf",
+  awsActivate: "https://aws.amazon.com/pt/startups/credits/",
   incubationRegulation: "https://ifsertaope.edu.br/wp-content/uploads/2025/12/Regulamento_SertaoInovador_v4_assinado-1.pdf",
   previousCycle: "https://ifsertaope.edu.br/editais/edital-n-o-45-2026/",
   coordination: "https://ifsertaope.edu.br/wp-content/uploads/2026/05/retificacao_edital_45_2026_assinado.pdf",
@@ -83,6 +92,31 @@ export const cases = [
 ];
 
 export const selected2023 = ["AICURY", "CESTA ORGÂNICA", "CONECTA AGRO", "FALA CIDADÃO", "INTERMED", "MOTOR PET", "PETFRIENDLY", "PLATAFORMA DEMÉTER", "PREVMOD", "PROJETO DEFESA", "ROBOTRÔNICA", "ROPE - IHS", "SALGS TURISMO", "SERTÃOCODE", "SIMENERGY", "VIDA PLENA"];
+
+// Names transcribed from the final result dated 26/01/2026, published 27/01/2026.
+export const selected2026 = [
+  "Aceleração Digital .BR", "Anima para negócios", "AquEdu", "ATROPICAL",
+  "Biobloco Caatinga", "Branding Comunicação Integrada", "Carvibe", "Clima Investe",
+  "Conduzzir", "Conecta Agro Inova Simples", "Detekt AI", "Diná Treinamentos",
+  "EduCompete", "Frete&Gesso", "IMA Consultoria E Produção Cultural",
+  "Inovação Sustentável Para Produtividade", "ITECH", "Kata Studio/SERA462",
+  "Laranvitta", "Lawify", "Neureon", "Reclick", "Recruta Easy",
+  "REFABRIK INOVA SIMPLES", "Smart Circular Design", "Studio Z7",
+  "Syncfive - ReUse.app", "ZADEE – Encontre E Contrate Serviços",
+];
+
+export const featuredStartups = ["AquEdu", "Conecta Agro Inova Simples", "Detekt AI", "Lawify", "Reclick", "Syncfive - ReUse.app"];
+
+export const benefits = [
+  { title: "Até US$ 5 mil em créditos AWS", text: "Possibilidade de créditos para serviços de nuvem, conforme elegibilidade, oferta disponível e aprovação da AWS. A incubadora orienta a solicitação.", tag: "Nuvem", href: sources.awsActivate, action: "Consultar o AWS Activate" },
+  { title: "Mentorias de negócios e tecnologia", text: "Acompanhamento individual e coletivo com especialistas para discutir decisões e próximos passos do projeto.", tag: "Acompanhamento", href: "/sertao-inovador", action: "Conhecer os programas" },
+  { title: "Diagnóstico e plano individual", text: "Identificação do estágio e das prioridades do negócio para organizar o desenvolvimento durante a incubação.", tag: "Desenvolvimento", href: "/sertao-inovador/incubacao", action: "Entender a incubação" },
+  { title: "Apoio à captação de recursos", text: "Orientação para identificar editais e estruturar propostas de financiamento.", tag: "Oportunidades", href: emailLink("Apoio à captação de recursos — Sertão Maker"), action: "Conversar sobre captação" },
+  { title: "Formação técnica: Cisco e Huawei", text: "Possibilidade de acesso a capacitações em programação, redes, inteligência artificial e outras áreas, conforme as ofertas das academias parceiras.", tag: "Capacitação", href: emailLink("Capacitações Cisco e Huawei — Sertão Maker"), action: "Consultar capacitações" },
+  { title: "Networking e conexões", text: "Aproximação com empreendedores, mentores, instituições e parceiros estratégicos do ecossistema.", tag: "Rede", href: "/parcerias", action: "Conhecer a rede" },
+  { title: "Infraestrutura para prototipagem", text: "Laboratório de IoT, impressão 3D e recursos do CIM para testar soluções, mediante agenda e condições de acesso.", tag: "Tecnologia", href: "/servicos", action: "Consultar infraestrutura" },
+  { title: "Comunicação e apresentação", text: "Sala de podcast e apoio à apresentação do negócio para produzir conteúdos e comunicar a solução, conforme disponibilidade.", tag: "Comunicação", href: "/servicos", action: "Conhecer os espaços" },
+];
 
 export const guides = [
   {

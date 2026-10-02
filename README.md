@@ -44,13 +44,25 @@ está configurado para exportação estática no GitHub Pages.
 - `components/`: componentes de conteúdo, cabeçalho e rodapé
 - `public/`: imagens e outros arquivos públicos
 - `lib/site-content.ts`: dados compartilhados, contatos, cronograma e guias
+- `content/noticias.json`: notícias iniciais, usadas antes da primeira gravação no armazenamento
+- `app/admin/` e `app/api/admin/`: painel editorial e acesso protegido
+- `docs/painel-editorial.md`: publicação de notícias, links e gestão de acesso
 - `docs/conteudo-e-fontes.md`: fontes, manutenção editorial e informações a confirmar
 
 ## Deploy na Vercel
 
 Importe o repositório `marceloanderson88/siteSertaoMaker`, selecione Next.js e
 mantenha a pasta raiz do projeto. Use `npm run build` e a saída automática do
-framework. Não há variáveis de ambiente obrigatórias no site atual.
+framework. O envio à branch `main` publica em produção no projeto Vercel
+`site-sertao-maker`, associado ao domínio `www.sertaomaker.com.br`.
+
+As páginas públicas funcionam com os textos iniciais sem variáveis. Para o
+painel `/admin`, conecte um store **privado** do Vercel Blob e configure
+`BLOB_READ_WRITE_TOKEN`, `ADMIN_EMAIL`, `ADMIN_PASSWORD_HASH` e
+`ADMIN_SESSION_SECRET`, conforme `.env.example` e `docs/painel-editorial.md`.
+Use `node scripts/setup-admin.mjs email@dominio.com` para gerar um acesso local
+sem exibir segredos no terminal. Não conecte previews ao acervo de produção.
+Com o projeto vinculado, `vercel env pull .env.local` prepara o desenvolvimento.
 As páginas de oportunidades usam renderização por requisição para encerrar
 o destaque de inscrição conforme a data publicada.
 

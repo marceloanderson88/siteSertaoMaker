@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MobileMenu } from "./mobile-menu";
 
-const links = [["SerTão Inovador", "/sertao-inovador"], ["Projetos", "/startups"], ["Serviços", "/servicos"], ["Oportunidades", "/oportunidades"], ["Conteúdos", "/conteudos"], ["Sobre", "/sobre"], ["Contato", "/contato"]];
+const links = [["SerTão Inovador", "/sertao-inovador"], ["Projetos", "/startups"], ["Serviços", "/servicos"], ["Oportunidades", "/oportunidades"], ["Notícias", "/noticias"], ["Guias", "/conteudos"], ["Sobre", "/sobre"], ["Contato", "/contato"]];
 
 export function Header() {
   return <header className="site-header"><div className="site-header__content">

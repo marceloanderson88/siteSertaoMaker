@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ContentPage } from "@/components/content/content-page";
+import { BenefitsSection } from "@/components/content/benefits-section";
 import { emailLink, sources } from "@/lib/site-content";
 export const metadata: Metadata = { title: "Serviços e infraestrutura | Sertão Maker", description: "Entenda os apoios de formação, mentoria, prototipagem e infraestrutura, as condições de acesso e como solicitar orientação." };
 export default function Page() {
@@ -13,6 +14,7 @@ export default function Page() {
       { title: "Propriedade intelectual e desenvolvimento conjunto", text: "A incubadora pode orientar o encaminhamento de dúvidas sobre proteção de criações. Projetos realizados conjuntamente com a instituição ou com sua infraestrutura podem exigir instrumento específico.", items: ["Explique a criação e o tipo de colaboração desejada", "Combine condições antes de iniciar desenvolvimento conjunto", "Consulte os responsáveis institucionais para orientações específicas"], link: { label: "Solicitar orientação e encaminhamento", href: emailLink("Orientação sobre propriedade intelectual — Sertão Maker") } },
     ]}
     cta={{ title: "Explique o que precisa testar ou desenvolver.", label: "Solicitar orientação sobre apoio", href: emailLink("Solicitação de apoio — Sertão Maker") }}>
+    <BenefitsSection />
     <section className="container content-section" aria-labelledby="request-title"><p className="eyebrow">Como solicitar</p><h2 id="request-title">Três passos para iniciar a conversa</h2><ol className="history-list"><li><span>01</span><div><h3>Apresente a necessidade</h3><p>Envie seu nome, vínculo com o projeto, estágio da iniciativa e o objetivo do apoio.</p></div></li><li><span>02</span><div><h3>Combine as condições</h3><p>A equipe orienta sobre viabilidade, acesso, responsáveis, agenda e eventuais custos. O envio do pedido inicia a análise, sem reservar automaticamente equipamentos.</p></div></li><li><span>03</span><div><h3>Planeje a execução</h3><p>Após a confirmação, siga os procedimentos combinados para atividades, materiais, segurança e registro dos resultados.</p></div></li></ol><p className="source-note">Infraestrutura e tipos de apoio descritos no <a href={sources.oldSite}>site institucional da Sertão Maker</a>. Condições do programa no <a href={sources.preIncubation}>edital 122/2026</a>.</p></section>
   </ContentPage>;
 }

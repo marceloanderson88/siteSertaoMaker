@@ -1,3 +1,4 @@
+import { BenefitsSection } from "@/components/content/benefits-section";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -39,6 +40,7 @@ export default function Page() { return <main className="sertao-page">
   <section className="sertao-block sertao-cycle" aria-labelledby="cycle-title"><div className="container sertao-cycle-grid"><div><p className="sertao-kicker">Jornada atual</p><h2 id="cycle-title"><span>Ciclo de</span> Pré-incubação 2026.2</h2><p>Edição com até 40 projetos, cerca de oito semanas de capacitação e atividades preferencialmente remotas. As atividades são gratuitas e não exigem participação societária.</p><p>O calendário prevê capacitação a partir de 19 de outubro e Demoday em 16 de dezembro. Consulte o cronograma atualizado e as retificações na página de oportunidades.</p></div></div><div className="container sertao-audience"><Image src="/sertao-12.png" alt="Jovem observando o território do Sertão" width={2172} height={724} sizes="(max-width: 864px) 100vw, 48vw" /><div><p className="sertao-kicker">Pessoas que transformam</p><h2><span>Para</span> quem é</h2><p>Para projetos inovadores em ideação ou validação, representados por pessoas maiores de idade residentes em Pernambuco. Não é preciso ter CNPJ ou ser estudante do IFSertãoPE. Metade das vagas é reservada a projetos vinculados ao Sertão Pernambucano, conforme o edital.</p></div></div></section>
   <CycleSummary />
   <section className="sertao-block sertao-benefits" aria-labelledby="benefits-title"><div className="container sertao-section-copy"><h2 id="benefits-title"><span>Por que</span> participar</h2></div><div className="container sertao-benefit-grid">{motivos.map((item) => <article key={item.titulo}><Image src={item.imagem} alt="" width={1080} height={1080} /><h3>{item.titulo}</h3><p>{item.texto}</p></article>)}</div></section>
+  <BenefitsSection />
   <section className="sertao-block sertao-faq" aria-labelledby="faq-title"><div className="container sertao-faq-grid"><div><p className="sertao-kicker">Perguntas que aproximam novos começos</p><h2 id="faq-title"><span>Dúvidas</span> frequentes</h2></div><div>{faq.map(([pergunta, resposta]) => <details key={pergunta}><summary>{pergunta}<ChevronDown aria-hidden="true" /></summary><p>{resposta}</p></details>)}</div></div></section>
   <div className="sertao-final-band">
     <Image className="sertao-final-background" src="/sertao-rodape.png" alt="" width={1672} height={941} sizes="100vw" />
