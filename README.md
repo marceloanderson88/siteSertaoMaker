@@ -43,6 +43,16 @@ está configurado para exportação estática no GitHub Pages.
 - `app/`: páginas, estilos e layout global
 - `components/`: componentes de conteúdo, cabeçalho e rodapé
 - `public/`: imagens e outros arquivos públicos
+- `lib/site-content.ts`: dados compartilhados, contatos, cronograma e guias
+- `docs/conteudo-e-fontes.md`: fontes, manutenção editorial e informações a confirmar
+
+## Deploy na Vercel
+
+Importe o repositório `marceloanderson88/siteSertaoMaker`, selecione Next.js e
+mantenha a pasta raiz do projeto. Use `npm run build` e a saída automática do
+framework. Não há variáveis de ambiente obrigatórias no site atual.
+As páginas de oportunidades usam renderização por requisição para encerrar
+o destaque de inscrição conforme a data publicada.
 
 Dependências, arquivos de build e variáveis de ambiente locais são ignorados
 pelo Git por meio do `.gitignore`.
