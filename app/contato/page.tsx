@@ -1,0 +1,4 @@
+import type { Metadata } from "next";
+import { ContentPage } from "@/components/content/content-page";
+export const metadata: Metadata = { title: "Contato | Incubadora Sertão Maker" };
+export default function Page() { return <ContentPage eyebrow="Vamos conversar" title="Contato" intro="Entre em contato para saber mais sobre o SerTão Inovador, parcerias, atividades e próximas oportunidades." blocks={[{title:"Localização",text:"Centro de Inovação Maker — CIM · IFSertãoPE Campus Salgueiro."},{title:"Canais oficiais em validação",text:"E-mail, WhatsApp, telefone, redes sociais, horários e formulário serão publicados quando forem confirmados pela equipe responsável."},{title:"Parcerias",text:"Empresas, instituições, especialistas e organizações poderão usar esta área para iniciar novas conexões com a incubadora."}]} />; }

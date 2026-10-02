@@ -1,0 +1,4 @@
+import type { Metadata } from "next";
+import { ContentPage } from "@/components/content/content-page";
+export const metadata: Metadata = { title: "Conteúdos | Incubadora Sertão Maker" };
+export default function Page() { return <ContentPage eyebrow="Notícias e agenda" title="Conteúdos" intro="Conhecimento, histórias e acontecimentos que movimentam a inovação e o empreendedorismo no Sertão." blocks={[{title:"Notícias",text:"Ações, chamadas, resultados e novidades da Sertão Maker e de seu ecossistema."},{title:"Eventos",text:"Oficinas, encontros, formações, bancas e atividades abertas à comunidade."},{title:"Histórias e artigos",text:"Experiências de projetos apoiados, entrevistas, guias e aprendizados para quem empreende e inova."},{title:"Conteúdo em preparação",text:"As primeiras publicações aparecerão após a validação editorial e institucional."}]} />; }

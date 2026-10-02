@@ -1,0 +1,4 @@
+import type { Metadata } from "next";
+import { ContentPage } from "@/components/content/content-page";
+export const metadata: Metadata = { title: "Oportunidades | Incubadora Sertão Maker" };
+export default function Page() { return <ContentPage eyebrow="Editais e chamadas" title="Oportunidades" intro="O ponto de encontro para editais, seleções, resultados, eventos e chamadas ligadas ao ecossistema de inovação." blocks={[{title:"Nenhum edital vigente publicado",text:"Esta versão ainda não recebeu os dados oficiais de um edital aberto. Nenhuma data ou condição será apresentada sem validação."},{title:"Próximas oportunidades",text:"Acompanhe esta página para conhecer novas edições do SerTão Inovador, chamadas de parceiros e atividades abertas."},{title:"Resultados e documentos",text:"Resultados publicados e documentos oficiais serão organizados aqui por programa e edição."}]} />; }

@@ -1,0 +1,4 @@
+import type { Metadata } from "next";
+import { ContentPage } from "@/components/content/content-page";
+export const metadata: Metadata = { title: "Startups e Projetos | Incubadora Sertão Maker" };
+export default function Page() { return <ContentPage eyebrow="Portfólio" title="Startups e projetos" intro="Iniciativas que transformam conhecimento, problemas reais e oportunidades do território em soluções inovadoras." blocks={[{title:"Portfólio em validação",text:"Os projetos serão publicados com nome, área, estágio, programa, ano de entrada e links oficiais após autorização e validação institucional."},{title:"O que você encontrará aqui",text:"Histórias, soluções, equipes e conquistas das iniciativas apoiadas pela Sertão Maker.",items:["Projetos em Pré-incubação","Negócios em Incubação","Soluções desenvolvidas","Conquistas e conexões"]}]} />; }
