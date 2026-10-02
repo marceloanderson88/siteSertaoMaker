@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+.admin-security { max-width: 56rem; margin: 1.5rem auto; }
+.admin-security h3 { margin-top: 1.5rem; }
+.admin-security form { display: grid; gap: 1rem; margin: 1rem 0; }
+.admin-security form > button { justify-self: start; }
+.admin-secret code, .admin-recovery code { overflow-wrap: anywhere; }
+.admin-recovery { padding: 1.25rem; border: 2px solid var(--red, #a31319); margin: 1.5rem 0; }
+.admin-recovery ul { display: grid; gap: .5rem; padding-left: 1.25rem; margin: 1rem 0; }
+
 :root { --wine:#94131a; --wine-dark:#6f0c12; --ink:#172131; --paper:#fbf8f2; --sand:#efe2d3; --line:rgba(23,33,49,.14); --white:#fff; --max-width:82rem; }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; scroll-padding-top:5.75rem; }

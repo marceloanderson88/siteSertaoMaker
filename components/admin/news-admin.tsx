@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import Link from "next/link";
 import type { EditorialContent, ManagedPost } from "@/lib/cms";
+import { SecuritySettings } from "@/components/admin/security-settings";
 
 type Snapshot = { content: EditorialContent; version: string };
 const today = () => new Intl.DateTimeFormat("en-CA", { timeZone: "America/Sao_Paulo", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
@@ -14,10 +15,11 @@ export function NewsAdmin({ initial, loggedIn, configured }: { initial: Snapshot
   const [snapshot, setSnapshot] = useState(initial);
   const [busy, setBusy] = useState(false);
   const [feedback, setFeedback] = useState("");
-  const [tab, setTab] = useState<"posts" | "social">("posts");
+  const [tab, setTab] = useState<"posts" | "social" | "security">("posts");
   const [post, setPost] = useState<ManagedPost | null>(null);
   const [isNew, setIsNew] = useState(false);
   const [dirty, setDirty] = useState(false);
+  const [unsavedRecovery, setUnsavedRecovery] = useState(false);
   const [slugEdited, setSlugEdited] = useState(false);
   const [networks, setNetworks] = useState(initial?.content.social || { instagram: "", community: "" });
 
@@ -40,13 +42,16 @@ export function NewsAdmin({ initial, loggedIn, configured }: { initial: Snapshot
     event.preventDefault(); const form = event.currentTarget; const values = new FormData(form);
     setBusy(true); setFeedback("");
     try {
-      await api("/api/admin/session", { method: "POST", body: JSON.stringify({ email: values.get("email"), password: values.get("password") }) });
+      await api("/api/admin/session", { method: "POST", body: JSON.stringify({ email: values.get("email"), password: values.get("password"), code: values.get("code") || "" }) });
       form.reset(); setSession(true);
       const data = await api("/api/admin/content") as Snapshot; setSnapshot(data); setNetworks(data.content.social); setFeedback("Acesso autorizado.");
     } catch (error) { setFeedback((error as Error).message); }
     finally { setBusy(false); }
   }
-  function abandon() { return !dirty || window.confirm("Há alterações ainda não salvas. Deseja descartá-las?"); }
+  function abandon() {
+    if (unsavedRecovery && !window.confirm("Guarde os códigos de recuperação antes de sair. Eles não serão exibidos novamente. Você já os guardou?")) return false;
+    return !dirty || window.confirm("Há alterações ainda não salvas. Deseja descartá-las?");
+  }
   function select(item: ManagedPost | null) {
     if (!abandon()) return;
     setPost(item ? structuredClone(item) : emptyPost()); setIsNew(!item); setSlugEdited(!!item); setDirty(false); setFeedback(""); setTab("posts");
@@ -81,10 +86,11 @@ export function NewsAdmin({ initial, loggedIn, configured }: { initial: Snapshot
       {!configured && <p>O acesso precisa ser configurado pelo responsável pelo site.</p>}
       <label>E-mail<input name="email" type="email" autoComplete="username" required maxLength={254} /></label>
       <label>Senha<input name="password" type="password" autoComplete="current-password" required maxLength={256} /></label>
+      <label>Código do autenticador ou de recuperação<input name="code" type="text" autoComplete="one-time-code" maxLength={64} /><small>Preencha se a verificação em duas etapas estiver ativa.</small></label>
       <button className="button button--primary" disabled={busy || !configured}>{busy ? "Entrando…" : "Entrar"}</button>
     </form> : <>
-      <div className="admin-toolbar"><div><button className={tab === "posts" ? "active" : ""} aria-pressed={tab === "posts"} disabled={busy} onClick={() => { if (abandon()) { setTab("posts"); setDirty(false); setNetworks(snapshot?.content.social || networks); } }}>Publicações</button><button className={tab === "social" ? "active" : ""} aria-pressed={tab === "social"} disabled={busy} onClick={() => { if (abandon()) { setTab("social"); setPost(null); setDirty(false); } }}>Redes e comunidade</button></div><div><button disabled={busy} onClick={refresh}>Atualizar lista</button><button disabled={busy} onClick={logout}>Sair</button></div></div>
-      {!snapshot ? <p>As publicações não puderam ser carregadas. Use “Atualizar lista” para tentar novamente.</p> : tab === "social" ? <form className="admin-form admin-networks" onSubmit={saveNetworks}><h2>Redes e comunidade</h2><p>Os links aparecem na página inicial, nas notícias e no rodapé.</p><label>Perfil do Instagram<input type="url" required value={networks.instagram} onChange={event => { setNetworks({ ...networks, instagram: event.target.value }); setDirty(true); }} /></label><label>Convite da comunidade<input type="url" placeholder="https://chat.whatsapp.com/…" value={networks.community} onChange={event => { setNetworks({ ...networks, community: event.target.value }); setDirty(true); }} /></label><p>Sem convite cadastrado, o site oferece um contato por e-mail para solicitar acesso.</p><button className="button button--primary" disabled={busy}>{busy ? "Salvando…" : "Salvar links"}</button></form> : <div className="admin-grid">
+      <div className="admin-toolbar"><div><button className={tab === "posts" ? "active" : ""} aria-pressed={tab === "posts"} disabled={busy} onClick={() => { if (abandon()) { setTab("posts"); setDirty(false); setNetworks(snapshot?.content.social || networks); } }}>Publicações</button><button className={tab === "social" ? "active" : ""} aria-pressed={tab === "social"} disabled={busy} onClick={() => { if (abandon()) { setTab("social"); setPost(null); setDirty(false); } }}>Redes e comunidade</button><button className={tab === "security" ? "active" : ""} aria-pressed={tab === "security"} disabled={busy} onClick={() => { if (abandon()) { setTab("security"); setPost(null); setDirty(false); } }}>Segurança</button></div><div><button disabled={busy} onClick={refresh}>Atualizar lista</button><button disabled={busy} onClick={logout}>Sair</button></div></div>
+      {tab === "security" ? <SecuritySettings onBusyChange={setBusy} onRecoveryChange={setUnsavedRecovery} onSessionEnded={() => { setSession(false); setSnapshot(null); setPost(null); setNetworks({ instagram: "", community: "" }); setDirty(false); setTab("posts"); setFeedback("Todas as sessões foram encerradas. Entre novamente."); }} /> : !snapshot ? <p>As publicações não puderam ser carregadas. Use “Atualizar lista” para tentar novamente.</p> : tab === "social" ? <form className="admin-form admin-networks" onSubmit={saveNetworks}><h2>Redes e comunidade</h2><p>Os links aparecem na página inicial, nas notícias e no rodapé.</p><label>Perfil do Instagram<input type="url" required value={networks.instagram} onChange={event => { setNetworks({ ...networks, instagram: event.target.value }); setDirty(true); }} /></label><label>Convite da comunidade<input type="url" placeholder="https://chat.whatsapp.com/…" value={networks.community} onChange={event => { setNetworks({ ...networks, community: event.target.value }); setDirty(true); }} /></label><p>Sem convite cadastrado, o site oferece um contato por e-mail para solicitar acesso.</p><button className="button button--primary" disabled={busy}>{busy ? "Salvando…" : "Salvar links"}</button></form> : <div className="admin-grid">
         <aside className="admin-list" aria-label="Lista de publicações"><button className="button button--primary" disabled={busy} onClick={() => select(null)}>Nova publicação</button><p>{snapshot.content.posts.length} publicações</p>{[...snapshot.content.posts].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)).map(item => <button disabled={busy} className={post?.slug === item.slug ? "selected" : ""} onClick={() => select(item)} key={item.slug}><span className="eyebrow">{item.status === "draft" ? "Rascunho" : item.publishedAt > today() ? "Agendada" : "Publicada"} · {item.category}</span><strong>{item.title}</strong><span>{item.publishedAt.split("-").reverse().join("/")}</span></button>)}</aside>
         {!post ? <div className="admin-empty"><h2>Uma boa oportunidade merece circular.</h2><p>Crie uma publicação ou selecione um item da lista para editar. Você pode salvar um rascunho antes de publicar.</p></div> : <form className="admin-form admin-editor" onSubmit={event => { event.preventDefault(); void save("published"); }}>
           <div className="admin-editor-heading"><h2>{isNew ? "Nova publicação" : "Editar publicação"}</h2><span>{dirty ? "Alterações não salvas" : post.status === "draft" ? "Rascunho" : "Publicada / agendada"}</span></div>

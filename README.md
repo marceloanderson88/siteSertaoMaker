@@ -58,7 +58,7 @@ framework. O envio à branch `main` publica em produção no projeto Vercel
 
 As páginas públicas funcionam com os textos iniciais sem variáveis. Para o
 painel `/admin`, conecte um store **privado** do Vercel Blob e configure
-`BLOB_READ_WRITE_TOKEN`, `ADMIN_EMAIL`, `ADMIN_PASSWORD_HASH` e
+`BLOB_READ_WRITE_TOKEN`, `ADMIN_EMAIL`, `ADMIN_PASSWORD_HASH_V2` e
 `ADMIN_SESSION_SECRET`, conforme `.env.example` e `docs/painel-editorial.md`.
 Use `node scripts/setup-admin.mjs email@dominio.com` para gerar um acesso local
 sem exibir segredos no terminal. Não conecte previews ao acervo de produção.

@@ -7,20 +7,25 @@
   },
   "scripts": {
     "dev": "next dev",
+    "dev:secure": "node scripts/run-local-secure.mjs dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test:security": "node scripts/run-local-secure.mjs test-security"
   },
   "dependencies": {
     "@vercel/blob": "^2.8.0",
     "lucide-react": "^1.46.0",
     "next": "16.3.6",
+    "otpauth": "^9.5.2",
+    "qrcode": "^1.5.4",
     "react": "19.2.6",
     "react-dom": "19.2.6"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "4.2.1",
     "@types/node": "22.19.19",
+    "@types/qrcode": "^1.5.6",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "eslint": "9.39.2",
