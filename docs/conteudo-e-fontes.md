@@ -1,6 +1,6 @@
 # Conteúdo editorial e fontes
 
-Revisão realizada em 2 de outubro de 2026. Os conteúdos de cada edição devem ser conferidos antes de divulgar novas inscrições.
+Revisão inicial realizada em 2 de outubro de 2026. Prazo e cronograma da pré-incubação atualizados em 7 de outubro de 2026, conforme a retificação nº 02. Os conteúdos de cada edição devem ser conferidos antes de divulgar novas inscrições.
 
 ## Onde atualizar
 
@@ -15,7 +15,7 @@ A página inicial, a apresentação do programa e as oportunidades são renderiz
 
 - Contato geral `contato@sertaomaker.com`: informado pelo responsável nesta revisão.
 - [Site anterior da Sertão Maker](https://www.sertaomaker.com.br/): infraestrutura, mentorias, formação Cisco/Huawei, orientação para editais, diagnóstico, networking e possibilidade de créditos de nuvem. Benefícios de terceiros são apresentados com condições de elegibilidade e disponibilidade.
-- [Edital nº 122/2026](https://ifsertaope.edu.br/editais/edital-n-o-122-2026/), [edital completo](https://ifsertaope.edu.br/wp-content/uploads/2026/09/Edital.pdf) e [retificação nº 01](https://ifsertaope.edu.br/wp-content/uploads/2026/09/retificacao_01_edital_122_2026_.pdf): pré-incubação 2026.2, público, vagas, gratuidade, atividades, seleção e cronograma.
+- [Edital nº 122/2026](https://ifsertaope.edu.br/editais/edital-n-o-122-2026/), [edital completo](https://ifsertaope.edu.br/wp-content/uploads/2026/09/Edital.pdf) e [retificação nº 02](https://ifsertaope.edu.br/wp-content/uploads/2026/10/retificacao_2edital_122_2026.pdf): pré-incubação 2026.2, público, vagas, gratuidade, atividades, seleção e cronograma. A retificação de 06/10 prorroga inscrições até 11/10, avaliação até 12/10, resultado preliminar em 13/10 e recursos em 14 e 15/10; resultado final e capacitação mantêm as datas anteriores.
 - [Edital nº 191/2025](https://ifsertaope.edu.br/editais/edital-n-o-191-2025/), [regulamento](https://ifsertaope.edu.br/wp-content/uploads/2025/12/Regulamento_SertaoInovador_v4_assinado-1.pdf) e [resultado final 2026.1](https://ifsertaope.edu.br/wp-content/uploads/2026/01/Resultado_final_2026.1.pdf): 28 startups aprovadas. Resultado datado de 26/01 e publicado em 27/01/2026. A seleção é conjunta de ISA e Sertão Maker; não comprova alocação individual ou vínculo contratual atual. Destaques reproduzem apenas nomes e aprovação, sem inferir atuação pelo nome.
 - [AWS Activate](https://aws.amazon.com/pt/startups/credits/): possibilidade de até US$ 5 mil em créditos, conforme oferta, elegibilidade e aprovação da AWS. Não equivale a dinheiro, concessão automática ou benefício fixo para todos os participantes.
 - [Registro do coordenador sobre a seleção](https://pt.linkedin.com/posts/marcelo-santos-84811227_uma-iniciativa-conjunta-de-3-incubadoras-activity-7164359160141103105-OePR): referência pública ao perfil `@incubadora_sertaomaker`.
@@ -27,7 +27,7 @@ A página inicial, a apresentação do programa e as oportunidades são renderiz
 
 ## Pontos para confirmação pela equipe
 
-1. A retificação nº 01 do edital 122/2026 informa inscrição até 05/10/2026, enquanto o resumo do portal mantém 30/09. O cabeçalho do PDF traz uma data posterior à publicação indicada no portal. A página de oportunidades informa a divergência e oferece os documentos e o canal oficial para esclarecimento.
+1. A retificação nº 02 do edital 122/2026, publicada em 06/10/2026, confirma inscrição até 11/10/2026. O site e a notícia persistida no painel seguem essa atualização; o resumo antigo do portal não prevalece sobre o novo cronograma.
 2. O regulamento de incubação menciona previsão geral de 12 meses e, em outra seção, 11 meses. O site informa a previsão geral e recomenda conferir o calendário aplicável.
 3. WhatsApp próprio, horário geral de atendimento, fotografias e composição atual da equipe ainda precisam ser fornecidos. O horário de 8h às 17h, de segunda a sexta, refere-se ao canal formal ISA do edital; visitas são combinadas previamente.
 4. A seleção mais recente está publicada com fonte e ciclo 2026.1. Distribuição entre incubadoras, vínculo atual, descrições detalhadas de cada startup, depoimentos e indicadores de impacto precisam de confirmação. Casos antigos continuam identificados como históricos.

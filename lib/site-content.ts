@@ -19,7 +19,7 @@ export function emailLink(subject: string, program = false) {
 export const sources = {
   preIncubation: "https://ifsertaope.edu.br/editais/edital-n-o-122-2026/",
   preRegulation: "https://ifsertaope.edu.br/wp-content/uploads/2026/09/Edital.pdf",
-  amendment: "https://ifsertaope.edu.br/wp-content/uploads/2026/09/retificacao_01_edital_122_2026_.pdf",
+  amendment: "https://ifsertaope.edu.br/wp-content/uploads/2026/10/retificacao_2edital_122_2026.pdf",
   incubation: "https://ifsertaope.edu.br/editais/edital-n-o-191-2025/",
   incubationResult: "https://ifsertaope.edu.br/wp-content/uploads/2026/01/Resultado_final_2026.1.pdf",
   awsActivate: "https://aws.amazon.com/pt/startups/credits/",
@@ -35,15 +35,15 @@ export const sources = {
 export const cycle = {
   name: "Pré-incubação 2026.2",
   notice: "Edital nº 122/2026",
-  checkedAt: "02/10/2026",
-  deadline: "05/10/2026",
+  checkedAt: "07/10/2026",
+  deadline: "11/10/2026",
   // Date-only deadline: stop advertising participation once the published day has ended in Brasília.
-  closesAt: "2026-10-06T00:00:00-03:00",
+  closesAt: "2026-10-12T00:00:00-03:00",
   timeline: [
-    ["Prazo de inscrição indicado na retificação", "05/10/2026"],
-    ["Avaliação e seleção", "06 a 10/10/2026"],
-    ["Resultado preliminar previsto", "12/10/2026"],
-    ["Recursos", "13 e 14/10/2026"],
+    ["Prazo de inscrição indicado na retificação nº 02", "11/10/2026"],
+    ["Avaliação e seleção", "06 a 12/10/2026"],
+    ["Resultado preliminar previsto", "13/10/2026"],
+    ["Recursos", "14 e 15/10/2026"],
     ["Resultado final previsto", "16/10/2026"],
     ["Capacitação e mentorias", "19/10 a 07/12/2026"],
     ["Demoday previsto", "16/12/2026"],
@@ -54,7 +54,7 @@ export function cycleStatus(now = new Date()) {
   const deadlinePassed = now.getTime() >= new Date(cycle.closesAt).getTime();
   return {
     deadlinePassed,
-    label: deadlinePassed ? "Prazo publicado encerrado" : "Prazo prorrogado: 05 de outubro",
+    label: deadlinePassed ? "Prazo publicado encerrado" : "Prazo prorrogado: 11 de outubro",
     action: deadlinePassed ? "Consultar seleção e comunicados" : "Conferir edital e inscrição",
   };
 }
