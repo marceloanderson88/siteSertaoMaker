@@ -1,6 +1,6 @@
 # Painel editorial
 
-Abra `/admin` e use o acesso entregue à equipe. A senha inicial foi preservada. A cópia local fica criptografada em `work/acesso-painel.protegido.txt`, ignorada pelo Git e vinculada ao usuário do Windows que a protegeu. Para consultar intencionalmente no seu terminal, execute `powershell -NoProfile -File scripts/read-admin-secret.ps1`. Não cole o resultado no chat ou em documentos compartilhados; guarde a senha em um gerenciador de senhas.
+Abra `/admin` e use o acesso entregue à equipe. A senha inicial foi preservada. A cópia local fica criptografada em `work/acesso-painel.protegido.txt`, ignorada pelo Git e vinculada ao usuário do Windows que a protegeu. Para consultar intencionalmente no seu terminal, execute `powershell -NoProfile -ExecutionPolicy RemoteSigned -File scripts/read-admin-secret.ps1`. Não cole o resultado no chat ou em documentos compartilhados; guarde a senha em um gerenciador de senhas.
 
 ## Segurança
 
